@@ -4,40 +4,23 @@ using System.Collections;
 
 public enum PlanetType {EARTH, ROCKY, OCEAN, GAS, LAVA, ICE};
 
-public class Planet
+public class Planet : MonoBehaviour
 {
-
-
     // Texture of different types of planets
     public Texture tex_earth;
 
-    string name;
-    PlanetType type; 
+    public string nickname;
+    public PlanetType type; 
     Star host;
 
     int orbit;
     int speed;
     int level;
 
-    public Planet(PlanetType type, Star host, int orbit)
-    {
-        this.type = type;
-        this.host = host;
-        this.orbit = orbit; 
-    }
-
-    public Planet(string name, PlanetType type, Star host, int orbit)
-    {
-        this.name = name;
-        this.type = type;
-        this.host = host;
-        this.orbit = orbit;
-    }
-
     // Use this for initialization
     void Start()
     {
-
+        gameObject.GetComponent<Renderer>().material.mainTexture = tex_earth;
 
     }
 

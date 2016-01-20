@@ -9,16 +9,6 @@ public class Star : MonoBehaviour
     public string nickname;
     int level;
 
-    public static GameObject CreateStar(GameObject obj, string name, Vector3 pos, Quaternion quat)
-    {
-        obj = (GameObject)Instantiate(obj, pos, quat);
-
-        obj.AddComponent<Star>();
-        obj.GetComponent<Star>().nickname = name;
-
-        return obj;
-    }
-
     public void AssignPlanet(Planet planet, int orbit)
     {
         if (orbit <= level + 3)
